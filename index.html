@@ -34,7 +34,7 @@ async function downloadPDFs() {
 
   for (const doi of dois) {
     const li = document.createElement("li");
-    li.textContent = doi + " ? checking...";
+    li.textContent = doi + " -  checking...";
     list.appendChild(li);
 
     try {
@@ -46,7 +46,7 @@ async function downloadPDFs() {
       if (data.best_oa_location && data.best_oa_location.url_for_pdf) {
         const pdfUrl = data.best_oa_location.url_for_pdf;
 
-        li.textContent = doi + " ? opening/downloading...";
+        li.textContent = doi + " - opening/downloading...";
 
         const a = document.createElement("a");
         a.href = pdfUrl;
@@ -63,11 +63,11 @@ async function downloadPDFs() {
         document.body.removeChild(a);
 
       } else {
-        li.innerHTML = `${doi} ? No free PDF (<a href="https://doi.org/${encodeURIComponent(doi)}" target="_blank">open article</a>)`;
+        li.innerHTML = `${doi} - No free PDF (<a href="https://doi.org/${encodeURIComponent(doi)}" target="_blank">open article</a>)`;
       }
 
     } catch (err) {
-      li.textContent = doi + " ? error";
+      li.textContent = doi + " - error";
     }
 
     await new Promise(r => setTimeout(r, 1500));
