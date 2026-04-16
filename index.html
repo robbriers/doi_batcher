@@ -14,7 +14,7 @@
 
 <h2>DOI PDF Auto Downloader</h2>
 <p>Paste the list of DOIs that you want to retrieve into the box below (JUST the DOI as per example), either one per line or separated by commas. You may have to disable the pop-up blocker for this site to allow multiple files to be downloaded. Depending on publisher and mode of access, papers may appear in new tabs, be directly downloaded, or fail to download. If they fail (often due to paywalls) then a link will be provided to allow you to check access and download pdfs manually.</p>
-<p>This uses the unpaywall API to locate and download the files. It incorporates a delay between requests to be nice and try and avoid hitting rate limits. You are recommended to not paste extensive lists for a single operation as this is more likely to lead to problems; ten at a time seems to work OK.
+<p>This uses the unpaywall API to locate and download the files. It incorporates a delay between requests to be nice and try and avoid hitting rate limits. You are recommended to not paste extensive lists for a single operation as this is more likely to lead to problems; ten at a time seems to work OK.</p>
 <textarea id="doiInput" placeholder="10.1038/nature12373"></textarea><br>
 <button onclick="downloadPDFs()">Download PDFs</button>
 
